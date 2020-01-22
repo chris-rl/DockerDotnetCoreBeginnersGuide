@@ -12,7 +12,7 @@ namespace MeetupLibTest
         public void AddAndMultiplyTest()
         {
             var result = _calculator.AddAndMultiply(2, 3);
-            Assert.Equal(14, result);
+            Assert.Equal(15, result);
         }
     }
 }
