@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MeetupLib;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +32,8 @@ namespace DockerWebApplication
             {
                 builder.AddRazorRuntimeCompilation();
             }
+
+            services.AddScoped<GreetingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
