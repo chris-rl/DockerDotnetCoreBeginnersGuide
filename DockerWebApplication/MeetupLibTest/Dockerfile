@@ -9,12 +9,11 @@ RUN dotnet restore "MeetupLibTest/MeetupLibTest.csproj"
 COPY . .
 WORKDIR "/src/MeetupLibTest"
 RUN dotnet build "MeetupLibTest.csproj" -c Release -o /app/build
-ENTRYPOINT [ "dotnet"]
 
 FROM build AS publish
 RUN dotnet publish "MeetupLibTest.csproj" -c Release -o /app/publish
 
-FROM base AS final
+FROM build AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "test", "MeetupLibTest.dll"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
