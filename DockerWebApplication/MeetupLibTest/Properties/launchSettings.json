@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MeetupLibTest": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
